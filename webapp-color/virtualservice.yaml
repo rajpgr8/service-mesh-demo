@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata: 
+  name: webapp-color-route
+spec:
+  hosts: ["*"]
+  gateways:
+  - webapp-color-gateway
+  http:
+  - route:
+    - destination:
+        host: webapp-color-svc
+        subset: webapp-color-v1
+        port:
+          number: 8080
+      weight: 50
+    - destination:
+        host: webapp-color-svc
+        subset: webapp-color-v2
+        port:
+          number: 8080
+      weight: 50

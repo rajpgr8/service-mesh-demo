@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata: 
+  name: webapp-color-destination
+spec:
+  host: "*"
+  subsets:
+  - name: webapp-color-v1
+    labels:
+      version: v1
+  - name: webapp-color-v2
+    labels:
+      version: v2

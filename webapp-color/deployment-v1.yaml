@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-color-v1
+  namespace: default
+  labels:
+    app: webapp-color
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-color
+  template:
+    metadata:
+      labels:
+        app: webapp-color
+        version: v1
+    spec:
+      containers:
+      - name: webapp-color
+        image: kodekloud/webapp-color
+        imagePullPolicy: Always
+        env:
+          - name: APP_COLOR
+            value: green
