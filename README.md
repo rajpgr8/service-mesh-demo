@@ -35,5 +35,6 @@ istio-ingressgateway   LoadBalancer   34.118.239.135   35.204.33.90   15021:3121
 ```
 ```
 # Test:
-$ curl http://35.204.33.90
+export GATEWAY_URL=35.204.33.90
+$ curl http://{GATEWAY_URL}
 ```
