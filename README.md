@@ -1,7 +1,7 @@
 # service-mesh-demo
 
 ```
-# First, need to have a k8s (GKE) cluster with workload idenity and ASM enabled. Then connect that cluster and run this command.
+# First, need to have a k8s (GKE) cluster with workload identity and ASM enabled. Then connect that cluster and run this command.
 kubectl apply -f webapp-color
 ```
 ```
